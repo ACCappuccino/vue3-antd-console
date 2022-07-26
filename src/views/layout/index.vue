@@ -48,6 +48,7 @@
                 <BreadcrumbTitle title="我与公司共成长" :routeArry="[]" />
                 <div :style="{ padding: '24px', background: '#fff' }">
                     xxx
+                    <img src="@/assets/vue.svg" />
                     <router-view />
                 </div>
             </a-layout-content>

@@ -18,4 +18,18 @@ export default defineConfig({
             resolvers: [AntDesignVueResolver()],
         }),
     ],
+    server: {
+        proxy: {
+            // 使用 proxy 实例
+            "/api": {
+                target: "http://121.43.97.203:10010",
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, ""),
+            },
+            "/socket.io": {
+                target: "ws://localhost:3000",
+                ws: true,
+            },
+        },
+    },
 });
